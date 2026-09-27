@@ -1,0 +1,9 @@
+# Local editor and operating-system files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Runtime reports exported by the demo
+helio-eval-report.json
+
