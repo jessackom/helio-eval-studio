@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#101526" />
+    <title>Helio Eval — AI Quality Studio</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="polish.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <a class="brand" href="#overview" aria-label="Helio Eval home">
+          <span class="brand-mark"><i></i><i></i><i></i></span>
+          <span>helio<span>eval</span></span>
+        </a>
+
+        <div class="workspace-switcher">
+          <span class="workspace-icon">H</span>
+          <span><strong>Helio AI</strong><small>Production workspace</small></span>
+          <button class="icon-button" aria-label="Switch workspace">⌄</button>
+        </div>
+
+        <nav class="main-nav" aria-label="Primary navigation">
+          <p>WORKSPACE</p>
+          <a class="nav-link active" href="#overview" data-view="overview"><span>▦</span> Overview</a>
+          <a class="nav-link" href="#evaluations" data-view="evaluations"><span>◈</span> Evaluations</a>
+          <a class="nav-link" href="#datasets" data-view="datasets"><span>▤</span> Datasets</a>
+          <a class="nav-link" href="#results" data-view="results"><span>↗</span> Results</a>
+          <a class="nav-link" href="#review" data-view="review"><span>◉</span> Human review <b id="review-count">8</b></a>
+          <p>OBSERVE</p>
+          <a class="nav-link" href="#traces" data-view="traces"><span>⌘</span> Agent traces</a>
+          <a class="nav-link" href="#alerts" data-view="alerts"><span>⚡</span> Alerts</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+          <button class="side-action" id="invite-button"><span>＋</span> Invite teammate</button>
+          <button class="user-menu"><span class="avatar">JS</span><span><strong>Julia Smith</strong><small>Admin</small></span><span>···</span></button>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div class="breadcrumb"><span>Workspace</span><b>/</b><strong id="view-label">Overview</strong></div>
+          <div class="top-actions">
+            <button class="icon-button top-icon" aria-label="Search">⌕</button>
+            <button class="icon-button top-icon notification" aria-label="Notifications">♧<i></i></button>
+            <button class="primary-button" id="new-eval-button">＋ New evaluation</button>
+          </div>
+        </header>
+
+        <section class="view active-view" id="overview-view">
+          <div class="intro-row">
+            <div>
+              <p class="eyebrow">QUALITY COMMAND CENTER</p>
+              <h1>Good evening, Julia <span>✦</span></h1>
+              <p class="subhead">Your AI systems are performing <strong>4.2% better</strong> than last week.</p>
+            </div>
+            <div class="date-control"><span>◷</span> Last 7 days <b>⌄</b></div>
+          </div>
+
+          <section class="score-row" aria-label="Evaluation metrics">
+            <article class="score-card"><div class="score-head"><span>OVERALL QUALITY</span><button aria-label="Metric information">i</button></div><div class="score-data"><strong>87.4</strong><span class="unit">/ 100</span><span class="trend good">↗ 4.2%</span></div><div class="score-meter"><i style="width:87.4%"></i></div><small>Across 12 active evaluations</small></article>
+            <article class="score-card"><div class="score-head"><span>REGRESSION RISK</span><button aria-label="Metric information">i</button></div><div class="score-data"><strong>Low</strong><span class="trend good">↓ 12%</span></div><div class="risk-scale"><i></i><i></i><i class="on"></i><i></i><i></i></div><small>2 metrics need attention</small></article>
+            <article class="score-card"><div class="score-head"><span>EVAL COVERAGE</span><button aria-label="Metric information">i</button></div><div class="score-data"><strong>72%</strong><span class="trend good">↗ 8.0%</span></div><div class="score-meter blue"><i style="width:72%"></i></div><small>216 of 300 critical scenarios</small></article>
+            <article class="score-card"><div class="score-head"><span>RUNS THIS WEEK</span><button aria-label="Metric information">i</button></div><div class="score-data"><strong>1,284</strong><span class="trend neutral">↗ 18.6%</span></div><div class="mini-bars"><i style="height:22%"></i><i style="height:41%"></i><i style="height:31%"></i><i style="height:57%"></i><i style="height:43%"></i><i style="height:76%"></i><i style="height:61%"></i></div><small>Across all environments</small></article>
+          </section>
+
+          <section class="content-grid top-grid">
+            <article class="panel quality-panel">
+              <div class="panel-heading"><div><p class="eyebrow">QUALITY TREND</p><h2>System health</h2></div><div class="segmented"><button class="selected">Quality</button><button>Latency</button><button>Cost</button></div></div>
+              <div class="chart-summary"><strong>87.4</strong><span class="trend good">↗ 4.2% <small>vs. previous period</small></span></div>
+              <div class="line-chart" aria-label="Quality trend chart">
+                <div class="chart-labels"><span>100</span><span>75</span><span>50</span><span>25</span></div>
+                <svg viewBox="0 0 700 195" role="img" aria-label="Quality increased from 82 to 87"><defs><linearGradient id="fill" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#8c7cff" stop-opacity=".25"/><stop offset="1" stop-color="#8c7cff" stop-opacity="0"/></linearGradient></defs><path class="gridline" d="M0 18H700M0 70H700M0 122H700M0 174H700"/><path class="area" d="M0 122 C43 113 55 130 93 115 S150 81 188 91 S242 103 278 76 S330 65 365 81 S425 102 457 79 S510 47 550 59 S610 43 642 38 S680 42 700 28 V195H0Z"/><path class="line" d="M0 122 C43 113 55 130 93 115 S150 81 188 91 S242 103 278 76 S330 65 365 81 S425 102 457 79 S510 47 550 59 S610 43 642 38 S680 42 700 28"/><circle cx="700" cy="28" r="5"/></svg>
+                <div class="chart-days"><span>Sep 20</span><span>Sep 21</span><span>Sep 22</span><span>Sep 23</span><span>Sep 24</span><span>Sep 25</span><span>Today</span></div>
+              </div>
+            </article>
+
+            <article class="panel attention-panel">
+              <div class="panel-heading"><div><p class="eyebrow">PRIORITY QUEUE</p><h2>Needs attention</h2></div><button class="text-button" data-view="review">View all →</button></div>
+              <div class="attention-list" id="attention-list">
+                <button class="attention-item"><span class="alert-icon red">!</span><span><strong>Retrieval faithfulness dropped</strong><small>Support RAG · −8.4% since yesterday</small></span><b class="negative">64.2</b><span>›</span></button>
+                <button class="attention-item"><span class="alert-icon amber">!</span><span><strong>Code sandbox timeouts</strong><small>Python benchmark · 7 failed cases</small></span><b class="amber">3.8%</b><span>›</span></button>
+                <button class="attention-item"><span class="alert-icon purple">◌</span><span><strong>Pending human reviews</strong><small>Agent trajectory suite · 8 samples</small></span><b>8</b><span>›</span></button>
+              </div>
+              <div class="coverage-callout"><div class="ring"><span>72%</span></div><div><strong>Close your coverage gap</strong><p>Add adversarial cases to protect new user flows.</p></div><button id="add-cases-button">Add cases</button></div>
+            </article>
+          </section>
+
+          <section class="content-grid bottom-grid">
+            <article class="panel recent-panel">
+              <div class="panel-heading"><div><p class="eyebrow">LIVE ACTIVITY</p><h2>Recent evaluation runs</h2></div><button class="text-button" data-view="results">All runs →</button></div>
+              <div class="table-wrap"><table><thead><tr><th>RUN</th><th>TYPE</th><th>MODEL / VERSION</th><th>SCORE</th><th>STATUS</th><th>TIME</th></tr></thead><tbody id="run-table"></tbody></table></div>
+            </article>
+            <article class="panel capability-panel"><div class="panel-heading"><div><p class="eyebrow">EVAL SURFACES</p><h2>Coverage by system</h2></div></div><div class="capability-list" id="capability-list"></div><button class="outline-button" id="create-suite-button">Create evaluation suite <span>→</span></button></article>
+          </section>
+        </section>
+
+        <section class="view" id="evaluations-view">
+          <div class="page-heading"><div><p class="eyebrow">EVALUATION LIBRARY</p><h1>Evaluation suites</h1><p class="subhead">Organize reusable tests across chat, RAG, agents, and code.</p></div><button class="primary-button" id="new-suite-button">＋ Create suite</button></div>
+          <div class="toolbar"><div class="search-box">⌕ <input id="suite-search" placeholder="Search evaluation suites" /></div><button class="filter-button">All types ⌄</button><button class="filter-button">Active ⌄</button></div>
+          <div class="suite-grid" id="suite-grid"></div>
+        </section>
+
+        <section class="view" id="datasets-view">
+          <div class="page-heading"><div><p class="eyebrow">TEST CORPUS</p><h1>Datasets & cases</h1><p class="subhead">Versioned scenarios that establish reliable quality gates.</p></div><button class="primary-button" id="new-case-button">＋ Add test case</button></div>
+          <div class="dataset-summary"><div><strong id="case-total">216</strong><span>total cases</span></div><div><strong>32</strong><span>adversarial cases</span></div><div><strong>18</strong><span>golden trajectories</span></div><button class="outline-button" id="import-cases">⇧ Import CSV / JSON</button></div>
+          <article class="panel dataset-panel"><div class="panel-heading"><div><h2>Scenario catalog</h2><p>Recent additions and high-value coverage gaps.</p></div><button class="text-button">Manage labels →</button></div><div class="case-list" id="case-list"></div></article>
+        </section>
+
+        <section class="view" id="results-view">
+          <div class="page-heading"><div><p class="eyebrow">RESULTS EXPLORER</p><h1>Model comparison</h1><p class="subhead">Compare quality, reliability, latency, and cost across every system.</p></div><button class="outline-button" id="export-results">⇩ Export report</button></div>
+          <div class="comparison-controls"><div class="segmented"><button class="selected">All surfaces</button><button>Chat</button><button>RAG</button><button>Agents</button><button>Code</button></div><button class="filter-button">This week ⌄</button></div>
+          <article class="panel leaderboard"><div class="panel-heading"><div><p class="eyebrow">LEADERBOARD</p><h2>Production candidates</h2></div><span class="live-indicator"><i></i> Updated 2m ago</span></div><div class="table-wrap"><table><thead><tr><th>MODEL</th><th>QUALITY</th><th>FAITHFULNESS</th><th>SUCCESS RATE</th><th>P95 LATENCY</th><th>COST / 1K</th><th>GATE</th></tr></thead><tbody id="leaderboard"></tbody></table></div></article>
+          <div class="result-insight"><span>✦</span><p><strong>Release signal:</strong> GPT-5.2 is above all quality gates and has 18% lower cost than the current production model.</p><button>Inspect diff →</button></div>
+        </section>
+
+        <section class="view" id="review-view">
+          <div class="page-heading"><div><p class="eyebrow">HUMAN-IN-THE-LOOP</p><h1>Review queue</h1><p class="subhead">Calibrate automated judges with fast, structured expert review.</p></div><div class="review-progress"><strong>8</strong><span>awaiting review</span></div></div>
+          <div class="review-layout"><aside class="review-queue" id="review-queue"></aside><article class="panel review-card"><div class="review-card-head"><span class="tag agent">AGENT TRAJECTORY</span><span class="muted">Case AG-042 · 2 of 8</span></div><h2>Resolve customer’s duplicate-charge request</h2><div class="conversation"><div class="message user"><span>Customer</span><p>My card was charged twice for order 10833. Can you fix it?</p></div><div class="trace-block"><p><span>Tool</span> <code>search_orders(order_id: 10833)</code><b>✓</b></p><p><span>Tool</span> <code>issue_refund(order_id: 10833, amount: 49.00)</code><b>✓</b></p></div><div class="message assistant"><span>Assistant</span><p>I found the duplicate charge and have issued a $49 refund. It should appear in 3–5 business days.</p></div></div><div class="rubric"><p>Does the response complete the task correctly and safely?</p><div><button class="rating-button bad">Incorrect</button><button class="rating-button">Partially correct</button><button class="rating-button good" id="review-pass">Correct</button></div></div><textarea id="review-note" placeholder="Optional note for the evaluation team"></textarea><div class="review-footer"><button class="text-button">Skip sample</button><button class="primary-button" id="submit-review">Submit review <span>⌘ ↵</span></button></div></article></div>
+        </section>
+
+        <section class="view" id="traces-view"><div class="empty-view"><span>⌘</span><h1>Agent traces</h1><p>Connect an agent runtime to explore every decision, tool call, and policy check.</p><button class="primary-button">Connect a runtime</button></div></section>
+        <section class="view" id="alerts-view"><div class="empty-view"><span>⚡</span><h1>Quality alerts</h1><p>Create notification policies for regression, safety, latency, and cost thresholds.</p><button class="primary-button">Create alert policy</button></div></section>
+      </main>
+    </div>
+
+    <dialog id="suite-dialog">
+      <form method="dialog" id="suite-form">
+        <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+        <p class="eyebrow">NEW EVALUATION</p><h2>Build a quality gate</h2><p class="dialog-copy">Choose the system under test, then add the metrics and cases that matter.</p>
+        <label>Suite name<input required id="suite-name" placeholder="e.g. Support RAG release gate" /></label>
+        <label>Evaluation surface<select id="suite-type"><option value="RAG">RAG & retrieval</option><option value="Chat">LLM chat</option><option value="Agent">Autonomous agent</option><option value="Code">Code generation</option><option value="Multi">Cross-system</option></select></label>
+        <fieldset><legend>Default evaluators</legend><label class="check-label"><input type="checkbox" checked /> LLM-as-a-judge quality rubric</label><label class="check-label"><input type="checkbox" checked /> Deterministic assertions</label><label class="check-label"><input type="checkbox" /> Human calibration sample</label></fieldset>
+        <button class="primary-button dialog-submit" value="default">Create suite <span>→</span></button>
+      </form>
+    </dialog>
+
+    <dialog id="case-dialog">
+      <form method="dialog" id="case-form">
+        <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+        <p class="eyebrow">ADD TEST CASE</p><h2>Capture a scenario</h2><label>Scenario name<input required id="case-name" placeholder="e.g. Ambiguous refund request" /></label><label>Surface<select id="case-surface"><option>Chat</option><option>RAG</option><option>Agent</option><option>Code</option></select></label><label>Prompt or task<textarea required id="case-prompt" placeholder="What should the model or agent do?"></textarea></label><button class="primary-button dialog-submit" value="default">Add case <span>→</span></button>
+      </form>
+    </dialog>
+    <div class="toast" id="toast" role="status"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
+
